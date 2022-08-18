@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <title>Tp Durand</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <center id="alignement">
+        <div><span>Bienvenu dans mon tp Web</span></div>
+      </center>
+    </header>
+    <!-- le formulaire de remplissage -->
+    <div>
+      <center id="alignement">
+        <label><u>SUIVI D'ORIENTATION</u> </label>
+      </center>
+      <form
+        method="post"
+        action="traitement.php"
+        name="MonFormulaire"
+        onsubmit="validateForm()"
+        id="myForm"
+      >
+        <!-- le 1er formulaire -->
+          <div id="part">
+            <center id="alignement"><span> ( ETAPE 1)</span></center>
+            <div class="espace">
+              <div style="margin: 2%">
+                <label>Nom</label>
+                <input type="text" name="nom" id="nom" class="nom" required />
+              </div>
+              <div style="margin: 2%">
+                <label>Prenom</label>
+                <input
+                  type="text"
+                  name="prenom"
+                  id="prenom"
+                  class="prenom"
+                  required
+                />
+              </div>
+              <div style="margin: 2%">
+                <label>Date</label>
+                <input
+                  type="date"
+                  name="date_naiss"
+                  id="date"
+                  class="ladate"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        <!-- 2eme etape -->
+          <div id="part">
+            <div class="espace">
+              <center id="alignement"><span> ( ETAPE 2)</span></center>
+              <span
+                ><center>Choisissez vos technologies (au moins 3)</center>
+              </span>
+              <div
+                style="display: flex; border: 1px; width: 50%; margin-left: 30%"
+              >
+                <div style="width: 40%; border: 1px; padding-left: 5px">
+                  <input type="checkbox" name="java" value="Java" />
+                  Java<br />
+                  <input type="checkbox" name="php" value="Php" /> Php
+                  <br />
+                  <input type="checkbox" name="python" value="python" /> python
+                  <br />
+                </div>
+                <div>
+                  <input type="checkbox" name="jScript" value="Javascript" />
+                  Javascript <br />
+                  <input type="checkbox" name="cpp" value="c++" /> c++
+                  <br />
+                  <input type="checkbox" name="react" value="React js" />
+                  React js <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Fin de la 2 eme etape -->
+
+        <!-- 3eme etape -->
+          <div id="part">
+            <center id="alignement"><span> ( ETAPE 3)</span></center>
+            <div class="espace">
+              <span><center>Vos années d'expérience :</center> </span> <br />
+
+              <div style="margin: 2%">
+                <input type="radio" name="annee_exp" value="0-1" /> o à 1 an<br />
+              </div>
+              <div style="margin: 2%">
+                <input type="radio" name="annee_exp" value="2-3" /> 2 à 3 ans<br />
+              </div>
+              <div style="margin: 2%">
+                <input type="radio" name="annee_exp" value="+3ans" /> + 3 ans
+              </div>
+            </div>
+          </div>
+
+        <!-- Fin de la 3 eme etape -->
+
+        <!-- 4eme etape -->
+          <div id="part">
+            <center id="alignement"><span> ( ETAPE 4)</span></center>
+            <span><center>type de contrat :</center> </span> <br />
+            <div class="espace">
+              <div>
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="C.D.I"
+                    onclick="nonedate()"
+                  />
+                  C.D.I
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="C.D.D"
+                    id="cdd"
+                    onclick="affdate()"
+                  />
+                  C.D.D
+                </div>
+              </div>
+
+              <div>
+                <label for="date_de_fin">Date de fin du contrat :</label>
+                <input type="date" name="date_de_fin" />
+                <br />
+              </div>
+            </div>
+          </div>
+
+        <!-- Fin de la 4 eme etape -->
+
+        <!-- 5eme etape -->
+          <div id="part">
+            <div class="espace">
+              <span><center>( récapitulatif )</center> </span> <br />
+              <div style="margin: 1%">
+                <label
+                  >Nom & Prenom :
+                  <!-- <script type="text/javascript">
+                  alert("nom_val");
+                </script> -->
+                  <span> </span
+                ></label>
+              </div>
+              <div style="margin: 1%">
+                <label
+                  >Age :
+                  <!-- <script type="text/javascript">
+                  alert("prenom");
+                </script> -->
+                  <span> </span
+                ></label>
+              </div>
+              <div style="margin: 1%">
+                <label>
+                  Vos technos :
+                  <!-- <script type="text/javascript">
+                  alert("technologie.value");
+                </script> -->
+                  <span> </span
+                ></label>
+              </div>
+              <div style="margin: 1%">
+                <label>
+                  Vos années d'experience :
+                  <!-- <script type="text/javascript">
+                  alert("annee_expert");
+                </script> -->
+                  <span> </span
+                ></label>
+              </div>
+              <div style="margin: 1%">
+                <label>
+                  type de contrat :
+                  <!-- <script type="text/javascript">
+                  alert("type_contrat");
+                </script> -->
+                  <span> </span
+                ></label>
+              </div>
+            </div>
+          </div>
+        <!-- Fin de la 5 eme etape -->
+        <div class="btn">
+          <button id="prev"><i class="fa fa-arrow-left"> </i>Precedent</button>
+          <button id="next">Suivant<i class="fa fa-arrow-right"> </i></button>
+        </div>
+        <button id="terminer" type="submit">Terminer<i class="fa fa-arrow-right"> </i></button>
+        
+    </form>
+    </div>
+    <!--  <script src="MonScript.js"></script>
+ -->
+  </body>
+</html>
